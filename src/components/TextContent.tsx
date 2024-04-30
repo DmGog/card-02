@@ -2,13 +2,16 @@ import React from "react";
 import {Button} from "./Button";
 import styled from "styled-components";
 
+type TextContentPropsType = {
+    titleCard?: string
+    textContent?: string
+}
 
-
-export const TextContent = () => {
+export const TextContent = (props: TextContentPropsType) => {
     return (
         <StyledTextContent>
-            <h1>Headline</h1>
-            <p>Faucibus. Faucibus. Sit sit sapien sit <br/> tempusrisu ut. Sit molestie ornare in venen.</p>
+            <h1>{props.titleCard || "Headline"}</h1>
+            <p>{props.textContent || "Faucibus. Faucibus. Sit sit sapien sit <br/> tempusrisu ut. Sit molestie ornare in venen."}</p>
             <Button type={"primary"}>See more</Button>
             <Button type={"outline"}>Save</Button>
         </StyledTextContent>
@@ -17,13 +20,14 @@ export const TextContent = () => {
 
 const StyledTextContent = styled.div`
     padding: 10px 20px 20px 20px;
+
     h1 {
         margin-bottom: 20px;
         font-weight: 700;
         font-size: 16px;
         color: #000;
     }
-    
+
     p {
         margin-bottom: 20px;
         font-weight: 500;

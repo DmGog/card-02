@@ -4,11 +4,20 @@ import photo from "../assets/images/card-img.png"
 import {TextContent} from "./TextContent";
 
 
-export const Card = () => {
+type CardPropsType = {
+    titleC?: string
+    textC?: string
+    imgC?: string
+}
+
+
+export const Card = (props: CardPropsType) => {
     return (
         <StyledCard>
-            <Photo src={photo} alt={"дюна"}/>
-            <TextContent/>
+            <ImageContainer>
+                <Photo src={props.imgC || photo} alt={"картинка"}/>
+            </ImageContainer>
+            <TextContent titleCard={props.titleC} textContent={props.textC}/>
         </StyledCard>
     );
 };
@@ -22,11 +31,15 @@ const StyledCard = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+`
+const ImageContainer = styled.div`
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 170px;
 `
 const Photo = styled.img`
-    padding: 10px;
-    border-radius: 10px;
     width: 100%;
-    min-height: 170px;
     object-fit: cover;
 `
