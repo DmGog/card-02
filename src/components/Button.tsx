@@ -14,10 +14,8 @@ export const Button = styled.button<ButtonPropsType>`
     font-weight: 700;
     font-size: 10px;
     line-height: 200%;
-    margin-right: 12px;
-    &:last-child{
-        margin-right: 0;
-    }
+    font-family: Inter, sans-serif;
+   
     ${props => props.type === "primary" && css<ButtonPropsType>`
         background-color: #4e71fe;
         color: #fff;
@@ -50,5 +48,4 @@ export const Button = styled.button<ButtonPropsType>`
         }
 
     `}
-
 `

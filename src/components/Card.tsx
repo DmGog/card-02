@@ -14,32 +14,34 @@ type CardPropsType = {
 export const Card = (props: CardPropsType) => {
     return (
         <StyledCard>
-            <ImageContainer>
+            <ImageWrapper>
                 <Photo src={props.imgC || photo} alt={"картинка"}/>
-            </ImageContainer>
+            </ImageWrapper>
             <TextContent titleCard={props.titleC} textContent={props.textC}/>
         </StyledCard>
     );
 };
 
-const StyledCard = styled.div`
-    width: 300px;
-    min-height: 350px;
+const StyledCard = styled.article`
+    max-width: 300px;
+    width: 100%;
+    //min-height: 350px;
     box-shadow: 0 4px 20px 5px rgba(0, 0, 0, 0.1);
     background: #fff;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    //justify-content: space-between;
 
 `
-const ImageContainer = styled.div`
-    margin: 10px;
-    border-radius: 10px;
+const ImageWrapper = styled.div`
+    padding: 10px;
+    //min-height: 170px;
     overflow: hidden;
-    height: 170px;
 `
 const Photo = styled.img`
     width: 100%;
+    border-radius: 10px;
     object-fit: cover;
+    height: 170px;
 `
