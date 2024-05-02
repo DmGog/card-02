@@ -21,7 +21,7 @@ export const TextContent = (props: TextContentPropsType) => {
 };
 
 const StyledTextContent = styled.div`
-    padding: 10px 20px 20px 20px;
+    padding: 9px 20px 22px;
 
     h1 {
         margin-bottom: 20px;

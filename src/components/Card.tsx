@@ -27,17 +27,26 @@ const StyledCard = styled.article`
     width: 100%;
     //min-height: 350px;
     box-shadow: 0 4px 20px 5px rgba(0, 0, 0, 0.1);
-    background: #fff;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    //justify-content: space-between;
-
+    justify-content: space-between;
+    background-image: linear-gradient(#ecc4cf, white);
+    transition: 0.2s;
+    &:hover {
+        transform: scale(1.1);
+    }
 `
 const ImageWrapper = styled.div`
     padding: 10px;
-    //min-height: 170px;
     overflow: hidden;
+    filter: grayscale(100%);
+    
+
+    &:hover {
+        filter: none;
+    }
+
 `
 const Photo = styled.img`
     width: 100%;

@@ -33,16 +33,18 @@ export const Button = styled.button<ButtonPropsType>`
     ${props => props.type === "outline" && css<ButtonPropsType>`
 
         border: 2px solid #4e71fe;
-        background-color: #fff;
+        background-color: transparent;
         color: #4e71fe;
 
         &:hover {
             border: 2px solid #5e7dfa;
             color: #5e7dfa;
-            background-color: #f5f2f2;
+            background-color: #f5f2f2; 
         }
+
         &:active {
             border: 2px solid #7dceec;
+            //border-image: repeating-linear-gradient(135deg, #132a83, #d32222) 1;
             background-color: #7dceec;
             color: #fff;
         }

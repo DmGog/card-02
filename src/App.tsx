@@ -7,10 +7,15 @@ import {GlobalStyles} from "./styles/GlobalStyles";
 const cardInfo = [
     {
         headline: "Рыжий кот",
-        text: "Рыжие кошки - это круто! Вот 8 самых удивительных фактов о рыжих кошках. Они являются одними из самых желанных кошек. Именно о них в основном спрашивают люди, желающие взять кошку домой. Рыжие кошки более популярны, чем чистопородные. Мода на цвет или на отличие о других? Потому что рыжие кошки бывают разные. И дело не только в цвете меха.",
-        img: "https://avatars.mds.yandex.net/i?id=bc51e1ea90fae704b2259e0ae1d30ed304dadb8f-13013698-images-thumbs&n=13",
+        text: "Рыжие кошки - это круто! Вот 8 самых удивительных фактов о рыжих кошках. Они являются одними из самых желанных кошек.",
+        img: "https://avatars.mds.yandex.net/i?id=65825e57e9114dbb49a68b9f1770cf147b1b4fe8-12540799-images-thumbs&n=13",
     },
-    {}
+    {
+        headline: "Кот",
+        img: "https://avatars.mds.yandex.net/i?id=12d36f70963ae8d686117b69e976949cb8d4c883-10995463-images-thumbs&n=13",
+    },
+    {},
+
 ]
 
 
@@ -19,21 +24,25 @@ function App() {
     const cards = cardInfo.map((c) => <Card titleC={c.headline} textC={c.text} imgC={c.img}/>)
 
     return (
-        <StyledSectionCard>
-            <GlobalStyles/>
-            {/*<Card/>*/}
-            {cards}
-        </StyledSectionCard>
+        <div className="App">
+            <ContainerCard>
+                <GlobalStyles/>
+                {/*<Card/>*/}
+                {cards}
+            </ContainerCard>
+        </div>
     );
 }
 
 export default App;
 
-const StyledSectionCard = styled.section`
-    min-height: 100vh;
+const ContainerCard = styled.div`
+    max-width: 1140px;
+    max-height: 100vh;
+    margin: 50px auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
 `
