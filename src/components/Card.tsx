@@ -21,11 +21,16 @@ export const Card = (props: CardPropsType) => {
         </StyledCard>
     );
 };
-
+const ImageWrapper = styled.div`
+    padding: 10px;
+    overflow: hidden;
+    filter: grayscale(100%);
+    
+`
 const StyledCard = styled.article`
     max-width: 300px;
     width: 100%;
-    //min-height: 350px;
+    height: 350px;
     box-shadow: 0 4px 20px 5px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     display: flex;
@@ -35,19 +40,13 @@ const StyledCard = styled.article`
     transition: 0.2s;
     &:hover {
         transform: scale(1.1);
-    }
-`
-const ImageWrapper = styled.div`
-    padding: 10px;
-    overflow: hidden;
-    filter: grayscale(100%);
-    
-
-    &:hover {
+        height: 100%;
+    };
+    &:hover ${ImageWrapper} {
         filter: none;
-    }
-
+    };
 `
+
 const Photo = styled.img`
     width: 100%;
     border-radius: 10px;
